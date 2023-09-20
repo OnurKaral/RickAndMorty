@@ -50,27 +50,53 @@ class _MainScreen extends State<MainScreen> {
                     ),
                   ),
                   Expanded(
-                    child: ListView.builder(
-                      scrollDirection: Axis.vertical,
-                      physics: const ScrollPhysics(),
-                      itemCount: state.response.data?.length,
-                      itemBuilder: (context, index) {
-                        final character = state.response.data?[index];
+                      child: ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    physics: const ScrollPhysics(),
+                    itemCount: state.response.data?.length ?? 0,
+                    itemBuilder: (context, index) {
+                      final character = state.response.data?[index];
 
-                        return ListTile(
-                          title:
-                          Text('${character?.name}'),
-                          subtitle:
-                          Text('Position: ${character?.status}'),
-                          trailing:
-                          Text('${character?.species}'),
+                      final characterName = character?.name ?? '';
+                      final characterStatus = character?.status ?? '';
+                      final characterSpecies = character?.species ?? '';
+                      final characterImage = character?.image ?? '';
 
-                          onTap: () {
-                          },
-                        );
-                      },
-                    ),
-                  ),
+                      return Card(
+                        elevation: 4,
+                        margin:
+                            EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                        child: ListTile(
+                          contentPadding: EdgeInsets.all(16),
+                          leading: CircleAvatar(
+                            radius: 30,
+                            backgroundImage: NetworkImage(characterImage),
+                          ),
+                          title: Text(
+                            characterName,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                          ),
+                          subtitle: Text(
+                            'Status: $characterStatus',
+                            style: const TextStyle(
+                              fontStyle: FontStyle.italic,
+                              fontSize: 14,
+                            ),
+                          ),
+                          trailing: Text(
+                            'Species: $characterSpecies',
+                            style: const TextStyle(
+                              color: Colors.blue,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  )),
                 ],
               );
             } else if (state is GetAllCharactersFail) {

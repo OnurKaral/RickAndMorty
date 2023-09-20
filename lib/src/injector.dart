@@ -10,16 +10,15 @@ final injector = GetIt.instance;
 
 Future<void> setup() async {
   injector
-      ..registerLazySingleton(Dio.new)
+    ..registerLazySingleton(Dio.new)
 
-  //Repository
+    //Repository
     ..registerLazySingleton(ApiService.new)
     ..registerLazySingleton<CharactersRepository>(
-            () => CharactersRepositoryImpl(apiService: injector()))
-  //UseCases
+        () => CharactersRepositoryImpl(apiService: injector()))
+    //UseCases
     ..registerLazySingleton(() => GetAllCharactersUseCase(injector()))
 
-  //Cubits
-  ..registerFactory(() => GetAllCharactersCubit(injector()));
-
+    //Cubits
+    ..registerFactory(() => GetAllCharactersCubit(injector()));
 }
