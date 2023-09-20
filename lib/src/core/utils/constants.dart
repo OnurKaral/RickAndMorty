@@ -1,3 +1,3 @@
 class Constants {
-  static const String baseUrl = "https://api.io/test";
+  static const String baseUrl = "https://rickandmortyapi.com/api";
 }

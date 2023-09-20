@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty_app/src/injector.dart';
+import 'package:rick_and_morty_app/src/presentation/bloc/get_characters/get_all_characters_cubit.dart';
+import 'package:rick_and_morty_app/src/presentation/views/main_screen.dart';
 
 Future<void> main() async {
   setup();
@@ -18,17 +20,9 @@ class MyApp extends StatelessWidget {
         colorScheme: const ColorScheme.dark(),
         useMaterial3: true,
       ),
-      home: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text('Click Me'),
-            ),
-          ],
-        ),
-      ),
+      home: BlocProvider(
+          create: (context) => injector<GetAllCharactersCubit>(),
+          child: const MainScreen()),
     );
   }
 }
