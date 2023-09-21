@@ -18,7 +18,7 @@ class _MainScreen extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('BLoC')),
+      appBar: AppBar(title: const Text('Rick and Morty')),
       body: Center(
         child: BlocBuilder<GetAllCharactersCubit, GetAllCharactersState>(
           builder: (context, state) {
