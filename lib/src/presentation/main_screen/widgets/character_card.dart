@@ -1,5 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:rick_and_morty_app/src/presentation/main_screen/views/detail_page.dart';
+import 'package:rick_and_morty_app/src/core/router/app_router.dart';
 
 class CharacterCard extends StatelessWidget {
   final String characterName;
@@ -21,18 +22,11 @@ class CharacterCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Navigate to the detail screen when the card is tapped
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => CharacterDetailScreen(
-              characterName: characterName,
-              characterSpecies: characterSpecies,
-              characterStatus: characterStatus,
-              characterImage: characterImage,
-            ),
-          ),
-        );
+        context.router.push(CharacterDetailRoute(
+            characterName: characterName,
+            characterSpecies: characterSpecies,
+            characterStatus: characterStatus,
+            characterImage: characterImage));
       },
       child: Card(
         elevation: 4,
@@ -40,7 +34,8 @@ class CharacterCard extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
-        color: Colors.blueGrey[800], // Dark futuristic background color
+        color: Colors.blueGrey[800],
+        // Dark futuristic background color
         child: ListTile(
           contentPadding:
               const EdgeInsets.symmetric(vertical: 8, horizontal: 16),

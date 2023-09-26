@@ -99,12 +99,14 @@ class _MainScreen extends State<MainScreen> {
             ),
           )),
       bottomNavigationBar: BottomNavigationBar(
-        elevation: 0, // Remove default bottom navigation bar shadow
-        backgroundColor:
-            Colors.white, // Background color of the bottom navigation bar
-        selectedItemColor:
-            Colors.blue, // Color for the selected item's icon and label
-        unselectedItemColor: Colors.grey, // Color for unselected items
+        elevation: 0,
+        // Remove default bottom navigation bar shadow
+        backgroundColor: Colors.white,
+        // Background color of the bottom navigation bar
+        selectedItemColor: Colors.blue,
+        // Color for the selected item's icon and label
+        unselectedItemColor: Colors.grey,
+        // Color for unselected items
         currentIndex: _currentIndex,
         onTap: (int index) {
           setState(() {
