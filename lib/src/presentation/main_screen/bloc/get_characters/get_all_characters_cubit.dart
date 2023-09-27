@@ -10,6 +10,7 @@ class GetAllCharactersCubit extends Cubit<GetAllCharactersState> {
     getAllCharacters();
   }
 
+  final currentState = GetAllCharactersState;
   final GetAllCharactersUseCase useCase;
 
   Future<void> getAllCharacters() async {

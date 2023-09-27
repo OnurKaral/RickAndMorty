@@ -8,12 +8,12 @@ import '../../injector.dart';
 class ApiService {
   final client = injector<Dio>();
 
-  Future<CharactersResponse> getAllCharacters() async {
+  Future<CharactersResponse> getAllCharacters(int page) async {
     try {
       client.interceptors.add(PrettyDioLogger());
 
       final response = await client.get(
-        "${Constants.baseUrl}/character",
+        "${Constants.baseUrl}/character?page=$page",
       );
 
       CharactersResponse allCharacters =
