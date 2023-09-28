@@ -15,7 +15,6 @@ class GetAllCharactersCubit extends Cubit<GetAllCharactersState> {
 
   Future<void> getAllCharacters() async {
     try {
-      emit(GetAllCharactersLoading());
       final characters = await useCase.getAllCharacters();
 
       emit(GetAllCharactersSuccess(characters));

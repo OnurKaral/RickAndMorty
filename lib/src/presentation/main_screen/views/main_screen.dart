@@ -91,10 +91,6 @@ class __MainScreen extends State<_MainScreen> {
                     physics: const ScrollPhysics(),
                     itemCount: state.response.data?.length ?? 0,
                     itemBuilder: (context, index) {
-                      if (index >= state.response.data!.length) {
-                        scrollController
-                            .jumpTo(scrollController.position.maxScrollExtent);
-                      }
                       final character = state.response.data?[index];
 
                       final characterName = character?.name ?? '';
@@ -124,7 +120,7 @@ class __MainScreen extends State<_MainScreen> {
             } else if (state is GetAllCharactersFail) {
               return Text(state.message);
             } else if (state is GetAllCharactersInitial) {
-              return const Text('Lütfen Butona Basınız.');
+              return const CircularProgressIndicator();
             }
             return const SizedBox.shrink();
           },
