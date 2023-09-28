@@ -31,7 +31,7 @@ class __MainScreen extends State<_MainScreen> {
   @override
   void initState() {
     super.initState();
-    handleNext();
+   // handleNext();
   }
 
   void fetchData() async {
@@ -91,6 +91,10 @@ class __MainScreen extends State<_MainScreen> {
                     physics: const ScrollPhysics(),
                     itemCount: state.response.data?.length ?? 0,
                     itemBuilder: (context, index) {
+
+                      if(index == state.response.data!.length - 2) {
+                        fetchData();
+                      }
                       final character = state.response.data?[index];
 
                       final characterName = character?.name ?? '';
