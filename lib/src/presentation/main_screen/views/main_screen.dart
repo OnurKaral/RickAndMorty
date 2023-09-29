@@ -28,29 +28,14 @@ class __MainScreen extends State<_MainScreen> {
   final TextEditingController _searchController = TextEditingController();
   ScrollController scrollController = ScrollController();
 
-  @override
-  void initState() {
-    super.initState();
-   // handleNext();
-  }
-
   void fetchData() async {
     context.read<GetAllCharactersCubit>().getAllCharacters();
-  }
-
-  void handleNext() {
-    scrollController.addListener(() async {
-      if (scrollController.position.maxScrollExtent ==
-          scrollController.position.pixels) {
-        fetchData();
-      }
-    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Rick and Morty')),
+      appBar: AppBar(title: const Text('Rick and Morty'), elevation: 10),
       body: Center(
         child: BlocBuilder<GetAllCharactersCubit, GetAllCharactersState>(
           builder: (context, state) {
@@ -59,7 +44,7 @@ class __MainScreen extends State<_MainScreen> {
             } else if (state is GetAllCharactersSuccess) {
               return Column(
                 children: [
-                  Padding(
+                  /* Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextField(
                       controller: _searchController,
@@ -83,7 +68,7 @@ class __MainScreen extends State<_MainScreen> {
                         _searchController.text = value;
                       },
                     ),
-                  ),
+                  ), */ // Search Bar
                   Expanded(
                       child: ListView.builder(
                     controller: scrollController,
@@ -91,8 +76,7 @@ class __MainScreen extends State<_MainScreen> {
                     physics: const ScrollPhysics(),
                     itemCount: state.response.data?.length ?? 0,
                     itemBuilder: (context, index) {
-
-                      if(index == state.response.data!.length - 2) {
+                      if (index == state.response.data!.length - 2) {
                         fetchData();
                       }
                       final character = state.response.data?[index];
@@ -102,7 +86,6 @@ class __MainScreen extends State<_MainScreen> {
                       final characterSpecies = character?.species ?? '';
                       final characterImage = character?.image ?? '';
 
-                      // Define status colors as constants
                       const aliveColor = Colors.green;
                       const deadColor = Colors.red;
                       Color statusColor =
@@ -132,13 +115,9 @@ class __MainScreen extends State<_MainScreen> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         elevation: 0,
-        // Remove default bottom navigation bar shadow
         backgroundColor: Colors.white,
-        // Background color of the bottom navigation bar
         selectedItemColor: Colors.blue,
-        // Color for the selected item's icon and label
         unselectedItemColor: Colors.grey,
-        // Color for unselected items
         currentIndex: _currentIndex,
         onTap: (int index) {
           setState(() {
@@ -155,8 +134,8 @@ class __MainScreen extends State<_MainScreen> {
             label: 'Episodes',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search), // Icon for the "Explore" item
-            label: 'Search', // Label for the "Explore" item
+            icon: Icon(Icons.search),
+            label: 'Search',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
