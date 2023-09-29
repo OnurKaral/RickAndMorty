@@ -73,7 +73,7 @@ class __MainScreen extends State<_MainScreen> {
                     physics: const ScrollPhysics(),
                     itemCount: state.response.data?.length ?? 0,
                     itemBuilder: (context, index) {
-                      if (index == state.response.data!.length - 2) {
+                      if (index == state.response.data!.length - 4) {
                         fetchData();
                       }
                       final character = state.response.data?[index];
