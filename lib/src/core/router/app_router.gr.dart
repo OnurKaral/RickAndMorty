@@ -27,6 +27,12 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
+    EpisodeRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const EpisodeScreen(),
+      );
+    },
     MainRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -82,6 +88,20 @@ class CharacterDetailRouteArgs {
   String toString() {
     return 'CharacterDetailRouteArgs{characterName: $characterName, characterSpecies: $characterSpecies, characterStatus: $characterStatus, characterImage: $characterImage}';
   }
+}
+
+/// generated route for
+/// [EpisodeScreen]
+class EpisodeRoute extends PageRouteInfo<void> {
+  const EpisodeRoute({List<PageRouteInfo>? children})
+      : super(
+          EpisodeRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'EpisodeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
