@@ -25,8 +25,6 @@ class _MainScreen extends StatefulWidget {
 
 class __MainScreen extends State<_MainScreen> {
   int _currentIndex = 0;
-  final TextEditingController _searchController = TextEditingController();
-  ScrollController scrollController = ScrollController();
 
   void fetchData() async {
     context.read<GetAllCharactersCubit>().getAllCharacters();
@@ -71,7 +69,6 @@ class __MainScreen extends State<_MainScreen> {
                   ), */ // Search Bar
                   Expanded(
                       child: ListView.builder(
-                    controller: scrollController,
                     scrollDirection: Axis.vertical,
                     physics: const ScrollPhysics(),
                     itemCount: state.response.data?.length ?? 0,
