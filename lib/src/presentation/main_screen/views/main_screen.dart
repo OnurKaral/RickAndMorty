@@ -148,19 +148,19 @@ class __MainScreen extends State<_MainScreen> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: 'Character',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
+            icon: Icon(Icons.movie_outlined),
+            label: 'Episodes',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.explore), // Icon for the "Explore" item
-            label: 'Explore', // Label for the "Explore" item
+            icon: Icon(Icons.search), // Icon for the "Explore" item
+            label: 'Search', // Label for the "Explore" item
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
+            icon: Icon(Icons.settings),
+            label: 'Settings',
           ),
         ],
       ),
