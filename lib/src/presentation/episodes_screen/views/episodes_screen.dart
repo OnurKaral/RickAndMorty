@@ -21,7 +21,11 @@ class __EpisodeScreen extends State<_EpisodeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Rick and Morty'), elevation: 10),
-      body: const Center(),
+      body: const Center(
+        child: Column(
+          children: [],
+        ),
+      ),
     );
   }
 }
