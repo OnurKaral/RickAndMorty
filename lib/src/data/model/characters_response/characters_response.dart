@@ -2,8 +2,8 @@ import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:rick_and_morty_app/src/domain/entities/CharactersResponseEntity.dart';
 
-import 'info.dart';
 import 'character.dart';
+import 'info.dart';
 
 part 'characters_response.g.dart';
 

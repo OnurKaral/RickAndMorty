@@ -33,8 +33,7 @@ class ApiService {
         "${Constants.baseUrl}/episode?page=$page",
       );
 
-      EpisodesResponse allEpisodes =
-      EpisodesResponse.fromJson(response.data);
+      EpisodesResponse allEpisodes = EpisodesResponse.fromJson(response.data);
 
       return allEpisodes;
     } catch (e) {

@@ -32,10 +32,7 @@ class Episode extends Equatable {
   Map<String, dynamic> toJson() => _$ResultToJson(this);
 
   EpisodeEntity toEntity() {
-    return EpisodeEntity(
-        id: id,
-        name: name,
-        url: url);
+    return EpisodeEntity(id: id, name: name, url: url);
   }
 
   @override

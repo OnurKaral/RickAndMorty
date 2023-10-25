@@ -1,5 +1,5 @@
-import 'package:rick_and_morty_app/src/data/model/characters_response/characters_response.dart';
 import 'package:rick_and_morty_app/src/data/model/characters_response/character.dart';
+import 'package:rick_and_morty_app/src/data/model/characters_response/characters_response.dart';
 import 'package:rick_and_morty_app/src/data/remote/api_service.dart';
 import 'package:rick_and_morty_app/src/domain/entities/CharactersResponseEntity.dart';
 import 'package:rick_and_morty_app/src/domain/repository/characters_repository.dart';
