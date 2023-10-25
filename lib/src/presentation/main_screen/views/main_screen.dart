@@ -24,7 +24,6 @@ class _MainScreen extends StatefulWidget {
 }
 
 class __MainScreen extends State<_MainScreen> {
-  int _currentIndex = 0;
 
   void fetchData() async {
     context.read<GetAllCharactersCubit>().getAllCharacters();
