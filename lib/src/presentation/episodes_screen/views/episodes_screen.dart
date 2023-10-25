@@ -1,5 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rick_and_morty_app/src/injector.dart';
+import 'package:rick_and_morty_app/src/presentation/main_screen/cubit/get_characters/get_all_characters_cubit.dart';
 
 @RoutePage()
 class EpisodeScreen extends StatelessWidget {
@@ -7,7 +10,10 @@ class EpisodeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _EpisodeScreen();
+    return BlocProvider(
+      create: (context) => injector<GetAllCharactersCubit>(),
+      child: _EpisodeScreen(),
+    );
   }
 }
 
