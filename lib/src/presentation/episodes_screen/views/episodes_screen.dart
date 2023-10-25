@@ -7,7 +7,7 @@ class EpisodeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CircularProgressIndicator();
+    return _EpisodeScreen();
   }
 }
 
@@ -21,9 +21,40 @@ class __EpisodeScreen extends State<_EpisodeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Rick and Morty'), elevation: 10),
-      body: const Center(
-        child: Column(
-          children: [],
+      body: Center(
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Column(children: <Widget>[
+              const SizedBox(height: 30),
+              const Text('Filled'),
+              const SizedBox(height: 15),
+              FilledButton(
+                onPressed: () {},
+                child: const Text('Enabled'),
+              ),
+              const SizedBox(height: 30),
+              const FilledButton(
+                onPressed: null,
+                child: Text('Disabled'),
+              ),
+            ]),
+            const SizedBox(width: 30),
+            Column(children: <Widget>[
+              const SizedBox(height: 30),
+              const Text('Filled tonal'),
+              const SizedBox(height: 15),
+              FilledButton.tonal(
+                onPressed: () {},
+                child: const Text('Enabled'),
+              ),
+              const SizedBox(height: 30),
+              const FilledButton.tonal(
+                onPressed: null,
+                child: Text('Disabled'),
+              ),
+            ])
+          ],
         ),
       ),
     );
