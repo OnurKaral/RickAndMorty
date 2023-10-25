@@ -7,17 +7,17 @@ part 'get_all_episodes_state.dart';
 
 class GetAllEpisodesCubit extends Cubit<GetAllEpisodesState> {
   GetAllEpisodesCubit(this.useCase) : super(GetAllEpisodesInitial()) {
-    getAllCharacters();
+    getAllEpisodes();
   }
 
   final currentState = GetAllEpisodesState;
   final GetAllEpisodesUseCase useCase;
 
-  Future<void> getAllCharacters() async {
+  Future<void> getAllEpisodes() async {
     try {
-      final characters = await useCase.getAllEpisodes();
+      final episodes = await useCase.getAllEpisodes();
 
-      emit(GetAllEpisodesSuccess(characters));
+      emit(GetAllEpisodesSuccess(episodes));
     } catch (e) {
       emit(const GetAllEpisodesFail('Bir hata oluştu'));
     }
