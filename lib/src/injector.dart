@@ -5,7 +5,8 @@ import 'package:rick_and_morty_app/src/data/remote/api_service.dart';
 import 'package:rick_and_morty_app/src/data/repository/characters_repository_impl.dart';
 import 'package:rick_and_morty_app/src/domain/repository/characters_repository.dart';
 import 'package:rick_and_morty_app/src/domain/usecases/get_characters_usecase.dart';
-import 'package:rick_and_morty_app/src/presentation/main_screen/bloc/get_characters/get_all_characters_cubit.dart';
+import 'package:rick_and_morty_app/src/presentation/episodes_screen/cubit/get_episodes/get_all_episodes_cubit.dart';
+import 'package:rick_and_morty_app/src/presentation/main_screen/cubit/get_characters/get_all_characters_cubit.dart';
 
 final injector = GetIt.instance;
 
@@ -22,5 +23,6 @@ Future<void> setup() async {
     ..registerLazySingleton(() => GetAllCharactersUseCase(injector()))
 
     //Cubits
-    ..registerFactory(() => GetAllCharactersCubit(injector()));
+    ..registerFactory(() => GetAllCharactersCubit(injector()))
+    ..registerFactory(() => GetAllEpisodesCubit(injector()));
 }
