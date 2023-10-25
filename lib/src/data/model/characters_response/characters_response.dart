@@ -3,14 +3,14 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:rick_and_morty_app/src/domain/entities/CharactersResponseEntity.dart';
 
 import 'info.dart';
-import 'result.dart';
+import 'character.dart';
 
 part 'characters_response.g.dart';
 
 @JsonSerializable()
 class CharactersResponse extends Equatable {
   final Info? info;
-  final List<Result>? results;
+  final List<Character>? results;
 
   const CharactersResponse({this.info, this.results});
 

@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'characters_response.dart';
+part of 'episodes_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-CharactersResponse _$CharactersResponseFromJson(Map<String, dynamic> json) =>
-    CharactersResponse(
+EpisodesResponse _$EpisodesResponseFromJson(Map<String, dynamic> json) =>
+    EpisodesResponse(
       info: json['info'] == null
           ? null
           : Info.fromJson(json['info'] as Map<String, dynamic>),
       results: (json['results'] as List<dynamic>?)
-          ?.map((e) => Character.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => Episode.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$CharactersResponseToJson(CharactersResponse instance) =>
+Map<String, dynamic> _$EpisodesResponseToJson(EpisodesResponse instance) =>
     <String, dynamic>{
       'info': instance.info,
       'results': instance.results,

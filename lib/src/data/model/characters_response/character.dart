@@ -5,10 +5,10 @@ import 'package:rick_and_morty_app/src/domain/entities/PlayerEntity.dart';
 import 'location.dart';
 import 'origin.dart';
 
-part 'result.g.dart';
+part 'character.g.dart';
 
 @JsonSerializable()
-class Result extends Equatable {
+class Character extends Equatable {
   final int? id;
   final String? name;
   final String? status;
@@ -22,7 +22,7 @@ class Result extends Equatable {
   final String? url;
   final DateTime? created;
 
-  const Result({
+  const Character({
     this.id,
     this.name,
     this.status,
@@ -37,7 +37,7 @@ class Result extends Equatable {
     this.created,
   });
 
-  factory Result.fromJson(Map<String, dynamic> json) {
+  factory Character.fromJson(Map<String, dynamic> json) {
     return _$ResultFromJson(json);
   }
 
