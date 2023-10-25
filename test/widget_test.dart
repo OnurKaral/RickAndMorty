@@ -5,11 +5,10 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:rick_and_morty_app/main.dart';
-import 'package:rick_and_morty_app/src/core/widgets/TestWidget.dart';
+import 'test_widget.dart';
 
 void main() {
   testWidgets('MyWidget has a title and message', (tester) async {
