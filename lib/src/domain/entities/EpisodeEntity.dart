@@ -1,20 +1,19 @@
 class EpisodeEntity {
   int? id;
   String? name;
-  String? status;
-  String? species;
-  String? type;
-  String? gender;
-  String? image;
+  String? airDate;
+  String? episode;
+  List<String>? characters;
   String? url;
+  DateTime? created;
 
-  EpisodeEntity(
-      {this.id,
-      this.name,
-      this.status,
-      this.species,
-      this.type,
-      this.gender,
-      this.image,
-      this.url});
+  EpisodeEntity({
+    this.id,
+    this.name,
+    this.airDate,
+    this.episode,
+    this.characters,
+    this.url,
+    this.created,
+  });
 }
