@@ -28,6 +28,8 @@ class EpisodeCard extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
+        color: Colors.lightGreen[300],
+        // Dark futuristic background color
         child: ListTile(
           contentPadding:
               const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
@@ -35,7 +37,7 @@ class EpisodeCard extends StatelessWidget {
             episodeName,
             style: const TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 18,
+              fontSize: 20,
               color: Colors.white, // White text color for contrast
             ),
           ),
@@ -46,8 +48,8 @@ class EpisodeCard extends StatelessWidget {
               Text(
                 episodeAirDate,
                 style: const TextStyle(
-                  fontSize: 14,
-                  color: Colors.grey,
+                  fontSize: 15,
+                  color: Colors.white,
                 ),
               ),
               const SizedBox(height: 8),
