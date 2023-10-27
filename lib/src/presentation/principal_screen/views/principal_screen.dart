@@ -13,6 +13,7 @@ class PrincipalScreen extends StatelessWidget {
         MainRoute(),
         EpisodeRoute(),
         SearchRoute(),
+        SettingsRoute()
       ],
       bottomNavigationBuilder: (_, tabsRouter) {
         return BottomNavigationBar(

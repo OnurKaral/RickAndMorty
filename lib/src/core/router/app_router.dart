@@ -4,6 +4,7 @@ import 'package:rick_and_morty_app/src/presentation/main_screen/views/detail_pag
 import 'package:rick_and_morty_app/src/presentation/main_screen/views/main_screen.dart';
 import 'package:rick_and_morty_app/src/presentation/principal_screen/views/principal_screen.dart';
 import 'package:rick_and_morty_app/src/presentation/search_screen/views/search_screen.dart';
+import 'package:rick_and_morty_app/src/presentation/settings_screen/views/settings_screen.dart';
 
 part 'app_router.gr.dart';
 
@@ -19,6 +20,7 @@ class AppRouter extends _$AppRouter {
             AutoRoute(path: 'main', page: MainRoute.page),
             AutoRoute(path: 'episode', page: EpisodeRoute.page),
             AutoRoute(path: 'search', page: SearchRoute.page),
+            AutoRoute(path: 'settings', page: SettingsRoute.page),
           ],
         ),
         AutoRoute(page: CharacterDetailRoute.page),
