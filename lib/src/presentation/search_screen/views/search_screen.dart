@@ -37,7 +37,7 @@ class __SearchScreen extends State<_SearchScreen> {
                       width: double.infinity, // Fill horizontally
                       child: CustomBottomSheet(),
                     );
-                    },
+                  },
                 );
               },
             ),
