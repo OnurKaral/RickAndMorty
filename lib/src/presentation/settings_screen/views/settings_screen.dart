@@ -19,7 +19,6 @@ class _SettingsScreen extends StatefulWidget {
 }
 
 class __SettingsScreen extends State<_SettingsScreen> {
-
   bool isDarkMode = false;
   String appVersion = "";
 
@@ -45,7 +44,6 @@ class __SettingsScreen extends State<_SettingsScreen> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-
           children: <Widget>[
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -62,9 +60,11 @@ class __SettingsScreen extends State<_SettingsScreen> {
                     });
                     // Toggle dark mode
                     if (isDarkMode) {
-                      SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+                      SystemChrome.setSystemUIOverlayStyle(
+                          SystemUiOverlayStyle.light);
                     } else {
-                      SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
+                      SystemChrome.setSystemUIOverlayStyle(
+                          SystemUiOverlayStyle.dark);
                     }
                   },
                 ),
@@ -80,4 +80,3 @@ class __SettingsScreen extends State<_SettingsScreen> {
     );
   }
 }
-
