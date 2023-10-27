@@ -24,7 +24,7 @@ class __SearchScreen extends State<_SearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Rick and Morty"),
+          title: const Text("Search"),
           actions: <Widget>[
             IconButton(
               icon: const Icon(Icons.filter_list),
