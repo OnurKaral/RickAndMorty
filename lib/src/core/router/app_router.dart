@@ -3,6 +3,7 @@ import 'package:rick_and_morty_app/src/presentation/episodes_screen/views/episod
 import 'package:rick_and_morty_app/src/presentation/main_screen/views/detail_page.dart';
 import 'package:rick_and_morty_app/src/presentation/main_screen/views/main_screen.dart';
 import 'package:rick_and_morty_app/src/presentation/principal_screen/views/principal_screen.dart';
+import 'package:rick_and_morty_app/src/presentation/search_screen/views/search_screen.dart';
 
 part 'app_router.gr.dart';
 
@@ -16,10 +17,12 @@ class AppRouter extends _$AppRouter {
           page: PrincipalRoute.page,
           children: [
             // `AudioPage` & `VideoPage` are nested children of `FeedPage`
-            AutoRoute(path: 'main', page: MainRoute.page),
+            AutoRoute(path: 'main', page: MainRoute.page, children: [
+              AutoRoute(page: CharacterDetailRoute.page),
+            ]),
             AutoRoute(path: 'episode', page: EpisodeRoute.page),
+            AutoRoute(path: 'search', page: SearchRoute.page),
           ],
         ),
-        AutoRoute(page: CharacterDetailRoute.page),
       ];
 }
