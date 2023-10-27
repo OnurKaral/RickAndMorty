@@ -28,8 +28,6 @@ class EpisodeCard extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
-        color: Colors.blueGrey[800],
-        // Dark futuristic background color
         child: ListTile(
           contentPadding:
               const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
@@ -44,25 +42,20 @@ class EpisodeCard extends StatelessWidget {
           subtitle: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 8),
               Text(
                 episodeAirDate,
                 style: const TextStyle(
-                  color: Colors.white70, // Cyan text color
-                  fontSize: 16,
+                  fontSize: 14,
+                  color: Colors.grey,
                 ),
               ),
-              const SizedBox(height: 4), // Add some spacing between the lines
-              Row(
-                children: [
-                  Text(
-                    episode,
-                    style: TextStyle(
-                      fontStyle: FontStyle.italic,
-                      fontSize: 14,
-                      color: Colors.grey[400], // Light grey text color
-                    ),
-                  ),
-                ],
+              const SizedBox(height: 8),
+              Text(
+                episode,
+                style: const TextStyle(
+                  fontSize: 14,
+                ),
               ),
             ],
           ),

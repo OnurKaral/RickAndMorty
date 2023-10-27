@@ -14,13 +14,15 @@ class EpisodesRepositoryImpl implements EpisodesRepository {
   @override
   Future<EpisodesResponseEntity> getAllEpisodes() async {
     try {
-      var response = await apiService.getAllEpisodes(page);
-      if (page > 1) {
-        oldResponse.results?.addAll(response.results as Iterable<Episode>);
-      } else {
-        oldResponse = response;
+      if (page < 4) {
+        var response = await apiService.getAllEpisodes(page);
+        if (page > 1) {
+          oldResponse.results?.addAll(response.results as Iterable<Episode>);
+        } else {
+          oldResponse = response;
+        }
+        page++;
       }
-      page++;
 
       final entity = oldResponse.toEntity();
       return entity;
