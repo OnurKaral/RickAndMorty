@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:rick_and_morty_app/src/core/widgets/custom_bottom_sheet.dart';
 
 @RoutePage()
 class SearchScreen extends StatelessWidget {
@@ -22,7 +23,26 @@ class __SearchScreen extends State<_SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text('Rick and Morty'), elevation: 10),
+        appBar: AppBar(
+          title: const Text("Rick and Morty"),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.filter_list),
+              onPressed: () {
+                // Open the custom bottom sheet when the filter icon is clicked
+                showModalBottomSheet(
+                  context: context,
+                  builder: (context) {
+                    return const SizedBox(
+                      width: double.infinity, // Fill horizontally
+                      child: CustomBottomSheet(),
+                    );
+                    },
+                );
+              },
+            ),
+          ],
+        ),
         body: Center(
             child: Column(
           children: [
