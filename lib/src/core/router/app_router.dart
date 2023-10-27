@@ -16,13 +16,11 @@ class AppRouter extends _$AppRouter {
           path: '/principal',
           page: PrincipalRoute.page,
           children: [
-            // `AudioPage` & `VideoPage` are nested children of `FeedPage`
-            AutoRoute(path: 'main', page: MainRoute.page, children: [
-              AutoRoute(page: CharacterDetailRoute.page),
-            ]),
+            AutoRoute(path: 'main', page: MainRoute.page),
             AutoRoute(path: 'episode', page: EpisodeRoute.page),
             AutoRoute(path: 'search', page: SearchRoute.page),
           ],
         ),
+        AutoRoute(page: CharacterDetailRoute.page),
       ];
 }

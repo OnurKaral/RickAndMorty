@@ -40,31 +40,6 @@ class __MainScreen extends State<_MainScreen> {
             } else if (state is GetAllCharactersSuccess) {
               return Column(
                 children: [
-                  /* Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: TextField(
-                      controller: _searchController,
-                      decoration: InputDecoration(
-                        hintText: 'Search...',
-                        // Add a clear button to the search bar
-                        suffixIcon: IconButton(
-                          icon: const Icon(Icons.clear),
-                          onPressed: () => _searchController.clear(),
-                        ),
-                        // Add a search icon or button to the search bar
-                        prefixIcon: IconButton(
-                          icon: const Icon(Icons.search),
-                          onPressed: () {},
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20.0),
-                        ),
-                      ),
-                      onSubmitted: (value) {
-                        _searchController.text = value;
-                      },
-                    ),
-                  ), */ // Search Bar
                   Expanded(
                       child: ListView.builder(
                     scrollDirection: Axis.vertical,
