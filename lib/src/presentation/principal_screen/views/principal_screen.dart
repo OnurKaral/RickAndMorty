@@ -12,6 +12,7 @@ class PrincipalScreen extends StatelessWidget {
       routes: const [
         MainRoute(),
         EpisodeRoute(),
+        SearchRoute(),
       ],
       bottomNavigationBuilder: (_, tabsRouter) {
         return BottomNavigationBar(
