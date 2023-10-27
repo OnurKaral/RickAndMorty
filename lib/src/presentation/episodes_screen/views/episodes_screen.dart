@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty_app/src/injector.dart';
 import 'package:rick_and_morty_app/src/presentation/episodes_screen/cubit/get_episodes/get_all_episodes_cubit.dart';
+import 'package:rick_and_morty_app/src/presentation/episodes_screen/widgets/episode_card.dart';
 import 'package:rick_and_morty_app/src/presentation/main_screen/cubit/get_characters/get_all_characters_cubit.dart';
-import 'package:rick_and_morty_app/src/presentation/main_screen/widgets/character_card.dart';
 
 @RoutePage()
 class EpisodeScreen extends StatelessWidget {
@@ -77,13 +77,14 @@ class __EpisodeScreen extends State<_EpisodeScreen> {
                       }
 
                       final episode = state.response.data?[index];
+                      final episodeName = episode?.name ?? '';
+                      final episodeAirDate = episode?.airDate ?? '';
+                      final episodeLayer = episode?.episode ?? '';
 
-                      return CharacterCard(
-                        characterName: episode!.name.toString(),
-                        characterSpecies: "characterSpecies",
-                        characterStatus: "characterStatus",
-                        characterImage: "characterImage",
-                        statusColor: Colors.red,
+                      return EpisodeCard(
+                        episodeName: episodeName,
+                        episodeAirDate: episodeAirDate,
+                        episode: episodeLayer,
                       );
                     },
                   )),
