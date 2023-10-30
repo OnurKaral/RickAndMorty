@@ -40,4 +40,21 @@ class ApiService {
       rethrow;
     }
   }
+
+  Future<CharactersResponse> searchCharacter(int page, String status, String gender) async {
+    try {
+      client.interceptors.add(PrettyDioLogger());
+
+      final response = await client.get(
+        "${Constants.baseUrl}/character?page=$page&gender=$gender&status=$status",
+      );
+
+      CharactersResponse searchedCharacters =
+      CharactersResponse.fromJson(response.data);
+
+      return searchedCharacters;
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

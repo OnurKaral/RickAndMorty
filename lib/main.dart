@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty_app/src/core/router/app_router.dart';
 import 'package:rick_and_morty_app/src/injector.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty_app/src/presentation/settings_screen/cubit/theme_cubit.dart';
 
 Future<void> main() async {
