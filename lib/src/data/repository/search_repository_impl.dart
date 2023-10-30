@@ -4,7 +4,7 @@ import 'package:rick_and_morty_app/src/data/remote/api_service.dart';
 import 'package:rick_and_morty_app/src/domain/entities/CharactersResponseEntity.dart';
 import 'package:rick_and_morty_app/src/domain/repository/search_characters_repository.dart';
 
-class SearchRepositoryImpl implements SearchCharactersRepository {
+class SearchRepositoryImpl implements SearchRepository {
   SearchRepositoryImpl({required this.apiService});
 
   final ApiService apiService;

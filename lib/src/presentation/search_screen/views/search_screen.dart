@@ -1,6 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty_app/src/core/widgets/custom_bottom_sheet.dart';
+import 'package:rick_and_morty_app/src/injector.dart';
+import 'package:rick_and_morty_app/src/presentation/settings_screen/cubit/search_characters_cubit.dart';
 
 @RoutePage()
 class SearchScreen extends StatelessWidget {
@@ -8,7 +11,10 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _SearchScreen();
+    return BlocProvider(
+      create: (context) => injector<SearchCharactersCubit>(),
+      child: _SearchScreen(),
+    );
   }
 }
 
@@ -19,6 +25,10 @@ class _SearchScreen extends StatefulWidget {
 
 class __SearchScreen extends State<_SearchScreen> {
   final TextEditingController _searchController = TextEditingController();
+
+  void fetchData() async {
+    context.read<SearchCharactersCubit>().searchCharacters("alive", "male");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +70,9 @@ class __SearchScreen extends State<_SearchScreen> {
                   // Add a search icon or button to the search bar
                   prefixIcon: IconButton(
                     icon: const Icon(Icons.search),
-                    onPressed: () {},
+                    onPressed: () {
+                      fetchData();
+                    },
                   ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20.0),

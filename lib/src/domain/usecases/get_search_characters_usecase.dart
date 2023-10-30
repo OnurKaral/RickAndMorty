@@ -2,13 +2,12 @@ import 'package:rick_and_morty_app/src/domain/entities/CharactersResponseEntity.
 import 'package:rick_and_morty_app/src/domain/repository/search_characters_repository.dart';
 
 class GetSearchCharactersUseCase {
-  final SearchCharactersRepository repository;
-  final String gender;
-  final String status;
+  final SearchRepository repository;
 
-  GetSearchCharactersUseCase(this.repository, this.gender, this.status);
+  GetSearchCharactersUseCase(this.repository);
 
-  Future<CharactersResponseEntity> getSearchedCharacters() {
+  Future<CharactersResponseEntity> getSearchedCharacters(
+      String gender, String status) {
     return repository.searchCharacters(gender, status);
   }
 }
