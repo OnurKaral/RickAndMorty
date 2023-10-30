@@ -20,6 +20,7 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: CharacterDetailScreen(
+          key: args.key,
           characterName: args.characterName,
           characterSpecies: args.characterSpecies,
           characterStatus: args.characterStatus,
@@ -64,6 +65,7 @@ abstract class _$AppRouter extends RootStackRouter {
 /// [CharacterDetailScreen]
 class CharacterDetailRoute extends PageRouteInfo<CharacterDetailRouteArgs> {
   CharacterDetailRoute({
+    Key? key,
     required String characterName,
     required String characterSpecies,
     required String characterStatus,
@@ -72,6 +74,7 @@ class CharacterDetailRoute extends PageRouteInfo<CharacterDetailRouteArgs> {
   }) : super(
           CharacterDetailRoute.name,
           args: CharacterDetailRouteArgs(
+            key: key,
             characterName: characterName,
             characterSpecies: characterSpecies,
             characterStatus: characterStatus,
@@ -88,11 +91,14 @@ class CharacterDetailRoute extends PageRouteInfo<CharacterDetailRouteArgs> {
 
 class CharacterDetailRouteArgs {
   const CharacterDetailRouteArgs({
+    this.key,
     required this.characterName,
     required this.characterSpecies,
     required this.characterStatus,
     required this.characterImage,
   });
+
+  final Key? key;
 
   final String characterName;
 
@@ -104,7 +110,7 @@ class CharacterDetailRouteArgs {
 
   @override
   String toString() {
-    return 'CharacterDetailRouteArgs{characterName: $characterName, characterSpecies: $characterSpecies, characterStatus: $characterStatus, characterImage: $characterImage}';
+    return 'CharacterDetailRouteArgs{key: $key, characterName: $characterName, characterSpecies: $characterSpecies, characterStatus: $characterStatus, characterImage: $characterImage}';
   }
 }
 

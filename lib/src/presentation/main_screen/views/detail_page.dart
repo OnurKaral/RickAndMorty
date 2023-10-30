@@ -8,7 +8,7 @@ class CharacterDetailScreen extends StatelessWidget {
   final String characterStatus;
   final String characterImage;
 
-  CharacterDetailScreen({
+  const CharacterDetailScreen({super.key,
     required this.characterName,
     required this.characterSpecies,
     required this.characterStatus,
