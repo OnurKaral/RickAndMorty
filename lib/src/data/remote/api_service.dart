@@ -41,7 +41,8 @@ class ApiService {
     }
   }
 
-  Future<CharactersResponse> searchCharacter(int page, String status, String gender) async {
+  Future<CharactersResponse> searchCharacter(
+      int page, String status, String gender) async {
     try {
       client.interceptors.add(PrettyDioLogger());
 
@@ -50,7 +51,7 @@ class ApiService {
       );
 
       CharactersResponse searchedCharacters =
-      CharactersResponse.fromJson(response.data);
+          CharactersResponse.fromJson(response.data);
 
       return searchedCharacters;
     } catch (e) {

@@ -1,8 +1,6 @@
 part of 'theme_cubit.dart';
 
-class ThemeState{
+class ThemeState {
   final ThemeData theme;
-  ThemeState({
-    required this.theme
-});
+  ThemeState({required this.theme});
 }
