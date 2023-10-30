@@ -59,7 +59,6 @@ class __SettingsScreen extends State<_SettingsScreen> {
                     setState(() {
                       isDarkMode = value;
                     });
-                    // Toggle dark mode
                     if (isDarkMode) {
                       final cubit = context.read<ThemeCubit>();
                       cubit.toggleTheme();
