@@ -8,20 +8,15 @@ class SearchRepositoryImpl implements SearchRepository {
   SearchRepositoryImpl({required this.apiService});
 
   final ApiService apiService;
-  int page = 1;
   var oldResponse = const CharactersResponse();
 
   @override
   Future<CharactersResponseEntity> searchCharacters(
       String gender, String status) async {
     try {
-      var response = await apiService.searchCharacter(page, gender, status);
-      if (page > 1) {
-        oldResponse.results?.addAll(response.results as Iterable<Character>);
-      } else {
-        oldResponse = response;
-      }
-      page++;
+      var response = await apiService.searchCharacter(gender, status);
+
+      oldResponse.results?.addAll(response.results as Iterable<Character>);
 
       final entity = oldResponse.toEntity();
       return entity;

@@ -26,8 +26,8 @@ class _SearchScreen extends StatefulWidget {
 class __SearchScreen extends State<_SearchScreen> {
   final TextEditingController _searchController = TextEditingController();
 
-  void fetchData() async {
-    context.read<SearchCharactersCubit>().searchCharacters("alive", "male");
+  void fetchData(String gender, String status) async {
+    context.read<SearchCharactersCubit>().searchCharacters(gender, status);
   }
 
   @override
@@ -43,9 +43,13 @@ class __SearchScreen extends State<_SearchScreen> {
                 showModalBottomSheet(
                   context: context,
                   builder: (context) {
-                    return const SizedBox(
+                    return SizedBox(
                       width: double.infinity, // Fill horizontally
-                      child: CustomBottomSheet(),
+                      child: CustomBottomSheet(
+                        onFilterChanged: (status, gender) {
+                          fetchData(gender, status);
+                        },
+                      ),
                     );
                   },
                 );
@@ -70,9 +74,7 @@ class __SearchScreen extends State<_SearchScreen> {
                   // Add a search icon or button to the search bar
                   prefixIcon: IconButton(
                     icon: const Icon(Icons.search),
-                    onPressed: () {
-                      fetchData();
-                    },
+                    onPressed: () {},
                   ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20.0),

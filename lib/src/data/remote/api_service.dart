@@ -42,12 +42,12 @@ class ApiService {
   }
 
   Future<CharactersResponse> searchCharacter(
-      int page, String status, String gender) async {
+      String gender, String status) async {
     try {
       client.interceptors.add(PrettyDioLogger());
 
       final response = await client.get(
-        "${Constants.baseUrl}/character?page=$page&gender=$gender&status=$status",
+        "${Constants.baseUrl}/character/?gender=$gender&status=$status",
       );
 
       CharactersResponse searchedCharacters =

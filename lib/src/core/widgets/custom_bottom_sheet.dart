@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomBottomSheet extends StatefulWidget {
-  const CustomBottomSheet({super.key});
+  final Function(String, String) onFilterChanged; // Callback function
+  const CustomBottomSheet({super.key, required this.onFilterChanged});
 
   @override
   _CustomBottomSheetState createState() => _CustomBottomSheetState();
@@ -24,9 +25,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
   }
 
   void applyFilter() {
-    // Handle the selected values here
-    print("Selected Status: $selectedStatus");
-    print("Selected Gender: $selectedGender");
+    widget.onFilterChanged(selectedStatus, selectedGender);
     Navigator.pop(context); // Close the bottom sheet
   }
 
