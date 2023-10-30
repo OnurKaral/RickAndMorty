@@ -30,7 +30,7 @@ Future<void> setup() async {
     ..registerLazySingleton<EpisodesRepository>(
         () => EpisodesRepositoryImpl(apiService: injector()))
     ..registerLazySingleton<SearchRepository>(
-            () => SearchRepositoryImpl(apiService: injector()))
+        () => SearchRepositoryImpl(apiService: injector()))
     //UseCases
     ..registerLazySingleton(() => GetSearchCharactersUseCase(injector()))
     ..registerLazySingleton(() => GetAllCharactersUseCase(injector()))
@@ -38,7 +38,7 @@ Future<void> setup() async {
 
     //Cubits
     ..registerFactory(() => ThemeCubit())
-    ..registerFactory(() => SearchCharactersCubit(injector(),"alive", "male"))
+    ..registerFactory(() => SearchCharactersCubit(injector()))
     ..registerFactory(() => GetAllCharactersCubit(injector()))
     ..registerFactory(() => GetAllEpisodesCubit(injector()));
 }

@@ -6,15 +6,10 @@ import 'package:rick_and_morty_app/src/domain/usecases/get_search_characters_use
 part 'search_characters_state.dart';
 
 class SearchCharactersCubit extends Cubit<SearchCharactersState> {
-  SearchCharactersCubit(this.useCase, this.gender, this.status)
-      : super(SearchCharactersInitial()) {
-    searchCharacters(gender, status);
-  }
+  SearchCharactersCubit(this.useCase) : super(SearchCharactersInitial());
 
   final currentState = SearchCharactersState;
   final GetSearchCharactersUseCase useCase;
-  final String gender;
-  final String status;
 
   Future<void> searchCharacters(String gender, String status) async {
     try {
