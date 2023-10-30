@@ -13,7 +13,7 @@ import 'package:rick_and_morty_app/src/domain/usecases/get_episodes_usecase.dart
 import 'package:rick_and_morty_app/src/domain/usecases/get_search_characters_usecase.dart';
 import 'package:rick_and_morty_app/src/presentation/episodes_screen/cubit/get_episodes/get_all_episodes_cubit.dart';
 import 'package:rick_and_morty_app/src/presentation/main_screen/cubit/get_characters/get_all_characters_cubit.dart';
-import 'package:rick_and_morty_app/src/presentation/settings_screen/cubit/search_characters_cubit.dart';
+import 'package:rick_and_morty_app/src/presentation/search_screen/cubit/search_characters_cubit.dart';
 import 'package:rick_and_morty_app/src/presentation/settings_screen/cubit/theme/theme_cubit.dart';
 
 final injector = GetIt.instance;

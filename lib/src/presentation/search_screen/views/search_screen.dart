@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty_app/src/core/widgets/custom_bottom_sheet.dart';
 import 'package:rick_and_morty_app/src/injector.dart';
-import 'package:rick_and_morty_app/src/presentation/settings_screen/cubit/search_characters_cubit.dart';
+import 'package:rick_and_morty_app/src/presentation/search_screen/cubit/search_characters_cubit.dart';
 
 @RoutePage()
 class SearchScreen extends StatelessWidget {
