@@ -39,12 +39,11 @@ class __SearchScreen extends State<_SearchScreen> {
             IconButton(
               icon: const Icon(Icons.filter_list),
               onPressed: () {
-                // Open the custom bottom sheet when the filter icon is clicked
                 showModalBottomSheet(
                   context: context,
                   builder: (context) {
                     return SizedBox(
-                      width: double.infinity, // Fill horizontally
+                      width: double.infinity,
                       child: CustomBottomSheet(
                         onFilterChanged: (status, gender) {
                           fetchData(gender, status);
@@ -66,12 +65,10 @@ class __SearchScreen extends State<_SearchScreen> {
                 controller: _searchController,
                 decoration: InputDecoration(
                   hintText: 'Search...',
-                  // Add a clear button to the search bar
                   suffixIcon: IconButton(
                     icon: const Icon(Icons.clear),
                     onPressed: () => _searchController.clear(),
                   ),
-                  // Add a search icon or button to the search bar
                   prefixIcon: IconButton(
                     icon: const Icon(Icons.search),
                     onPressed: () {},
@@ -85,38 +82,6 @@ class __SearchScreen extends State<_SearchScreen> {
                 },
               ),
             ),
-            /*  Expanded(
-                      child: ListView.builder(
-                        scrollDirection: Axis.vertical,
-                        physics: const ScrollPhysics(),
-                        itemCount: state.response.data?.length ?? 0,
-                        itemBuilder: (context, index) {
-                          if (index == state.response.data!.length - 4) {
-                            fetchData();
-                          }
-                          final character = state.response.data?[index];
-
-                          final characterName = character?.name ?? '';
-                          final characterStatus = character?.status ?? '';
-                          final characterSpecies = character?.species ?? '';
-                          final characterImage = character?.image ?? '';
-
-                          const aliveColor = Colors.green;
-                          const deadColor = Colors.red;
-                          Color statusColor =
-                          characterStatus.toLowerCase() == 'dead'
-                              ? deadColor
-                              : aliveColor;
-
-                          return CharacterCard(
-                            characterName: characterName,
-                            characterSpecies: characterSpecies,
-                            characterStatus: characterStatus,
-                            characterImage: characterImage,
-                            statusColor: statusColor,
-                          );
-                        },
-                      )) */
           ],
         )));
   }

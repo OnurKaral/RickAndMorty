@@ -8,7 +8,8 @@ class CharacterDetailScreen extends StatelessWidget {
   final String characterStatus;
   final String characterImage;
 
-  const CharacterDetailScreen({super.key,
+  const CharacterDetailScreen({
+    super.key,
     required this.characterName,
     required this.characterSpecies,
     required this.characterStatus,
@@ -40,11 +41,11 @@ class CharacterDetailScreen extends StatelessWidget {
                 Positioned(
                   bottom: 20,
                   child: Container(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     color: Colors.black.withOpacity(0.7),
                     child: Text(
                       characterName,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -55,28 +56,27 @@ class CharacterDetailScreen extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Text(
                     'Species: $characterSpecies',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
                     'Status: $characterStatus',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 16),
-                  // Add more details as needed
+                  const SizedBox(height: 16),
                 ],
               ),
             ),
